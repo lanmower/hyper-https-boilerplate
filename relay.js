@@ -12,11 +12,9 @@ module.exports = () => {
       server.on("connection", function(servsock) {
         servsock.once("data", function(data) {
           if(data == 'http') {
-            console.log('http');
             socket = net.connect(80, addr);
           }
           if(data == 'https') {
-            console.log('https');
             socket = net.connect(443, addr);
           }
           pump(servsock, socket, servsock);
