@@ -1,0 +1,15 @@
+{
+  "sites": [
+  ],
+  "defaults": {
+    "store": {
+      "module": "greenlock-store-fs"
+    },
+    "challenges": {
+      "http-01": {
+        "module": "acme-http-01-standalone"
+      }
+    },
+    "subscriberEmail": "john@example.com"
+  }
+}
