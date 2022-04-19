@@ -6,7 +6,7 @@ if(process.argv.length == 3) {
   const out = require('./relay.js')().serve(key, 80, "127.0.0.1");
   console.log('listening', b32.encode(out).replace('====','').toLowerCase());
   console.log('hex', out);
-} else console.log("usage: hyper-tcp-relay-server <port> <addr> <key>");
+} else console.log("usage: node server.js <key>");
 
 var app = require("./app.js");
  
