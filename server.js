@@ -1,6 +1,5 @@
 "use strict";
 var b32 = require("hi-base32");
-console.log(process.argv.length)
 if(process.argv.length == 3) {
   const key = process.argv[process.argv.length-1];
   const out = require('./relay.js')().serve(key, 80, "127.0.0.1");
