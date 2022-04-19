@@ -10,11 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@hyperswarm/dht": "next",
     "express": "^4.17.3",
     "greenlock-express": "^4.0.3",
-    "express-http-proxy": "^1.6.3",
-    "@hyperswarm/dht": "next",
     "hi-base32": "^0.5.1",
+    "http-proxy-middleware": "^2.0.4",
     "hypercore-crypto": "^2.3.0",
     "pump": "^3.0.0"
   }
