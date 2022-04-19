@@ -1,5 +1,11 @@
 {
   "sites": [
+      {
+      "subject": "YOUR DOMAIN HERE",
+      "altnames": [
+        "YOUR DOMAIN HERE"
+      ]
+    }  
   ],
   "defaults": {
     "store": {
