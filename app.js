@@ -1,16 +1,19 @@
-
 const express = require('express')
-const app = express()
-const port = 3000
+
 
 /*app.get('/', (req, res) => {
   res.send('Hello World!')
 })*/
 
-var proxy = require('express-http-proxy');
-app.use('/', proxy('www.google.com'));
-
-
+const app = express()
+const port = 3000
+const { createProxyMiddleware } = require('http-proxy-middleware');
+const exampleProxy = createProxyMiddleware({
+  target: 'http://www.example.org',
+  changeOrigin: true,
+  ws: true, 
+});
+app.use('/', exampleProxy);
 module.exports = app;
 
 
