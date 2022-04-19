@@ -1,6 +1,6 @@
 # hyper-https-boilerplate
 
-be sure to fill in a valid email address, and run the program using
+run the program using
 
 node server.js "seed for key"
 
@@ -40,7 +40,7 @@ challenge_status wgqalthnpdijvxhojamcidjwwlftsm37rrcqmctwkhd3ao6vy7na.matic.ml v
 certificate_status wgqalthnpdijvxhojamcidjwwlftsm37rrcqmctwkhd3ao6vy7na.matic.ml valid
 cert_issue (more info available: renewAt subject altnames)
 ```
-Your site should be immediately available as:
+Your site should be look something like:
 
 ![image](https://user-images.githubusercontent.com/657315/164029547-09a2da9c-2a73-477d-82f7-52a95e7d5d29.png)
 
