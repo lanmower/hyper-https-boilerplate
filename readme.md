@@ -12,7 +12,9 @@ and a few other lines with warnings, use that key like this as a domain:
 
 wgqalthnpdijvxhojamcidjwwlftsm37rrcqmctwkhd3ao6vy7na.matic.ml
 
-you set that up in your site config in the greenlock.d config file, and your email address in the bottom of the file and you're set, just rerun the app!
+you set that up in your site config in the greenlock.d config file,
+make sure to remove the example part of its filename
+and your email address in the bottom of the file and you're set, just rerun the app!
 
 if configured properly, you'll see an output like this:
 
