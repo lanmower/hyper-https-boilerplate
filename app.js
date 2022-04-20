@@ -1,19 +1,29 @@
-const express = require('express')
+const express = require('express');
+const fileUpload = require('express-fileupload');
+const app = express();
 
+// default options
+app.use(fileUpload());
+app.use(express.static('public'))
 
-/*app.get('/', (req, res) => {
-  res.send('Hello World!')
-})*/
+app.post('/upload', function(req, res) {
+  let sampleFile;
+  let uploadPath;
 
-const app = express()
-const port = 3000
-const { createProxyMiddleware } = require('http-proxy-middleware');
-const exampleProxy = createProxyMiddleware({
-  target: 'http://www.example.org',
-  changeOrigin: true,
-  ws: true, 
+  if (!req.files || Object.keys(req.files).length === 0) {
+    return res.status(400).send('No files were uploaded.');
+  }
+
+  // The name of the input field (i.e. "sampleFile") is used to retrieve the uploaded file
+  sampleFile = req.files.sampleFile;
+  uploadPath = __dirname + '/files/' + sampleFile.name;
+
+  // Use the mv() method to place the file somewhere on your server
+  sampleFile.mv(uploadPath, function(err) {
+    if (err)
+      return res.status(500).send(err);
+
+    res.send('File uploaded!');
+  });
 });
-app.use('/', exampleProxy);
 module.exports = app;
-
-
