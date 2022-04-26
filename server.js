@@ -1,15 +1,14 @@
 "use strict";
+require('dotenv').config()
 var b32 = require("hi-base32");
 console.log(process.argv.length)
-if(process.argv.length == 3) {
-  const key = process.argv[process.argv.length-1];
-  const out = require('./relay.js')().serve(key, 2080, 2443, "127.0.0.1");
-  console.log('listening', b32.encode(out).replace('====','').toLowerCase());
-  console.log('hex', out);
-} else console.log("usage: node server.js <key>");
+const key = process.argv[process.argv.length-1];
+const out = require('./relay.js')().serve(process.env.KEY, 2080, 2443, "127.0.0.1");
+console.log('listening', b32.encode(out).replace('====','').toLowerCase());
+console.log('hex', out);
 
 var app = require("./app.js");
- 
+
 require("greenlock-express")
     .init({
       packageRoot: __dirname,
@@ -32,4 +31,3 @@ function httpsWorker(glx) {
         console.info("Listening on ", httpServer.address());
     });
 }
-
